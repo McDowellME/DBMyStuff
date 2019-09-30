@@ -1,0 +1,30 @@
+﻿@model PersonalPropertyApp.Models.ClaimItems
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ClaimItems</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Item)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Item.Itemname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Report)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Report.Reportid)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Claimitemid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

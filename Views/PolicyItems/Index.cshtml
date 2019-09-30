@@ -1,0 +1,89 @@
+﻿@model IEnumerable<PersonalPropertyApp.Models.PolicyItems>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Itemname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Itemcategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Itemdescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchaseprice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchasedate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Itemimage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Receiptimage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Upc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Policy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Itemname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Itemcategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Itemdescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Purchaseprice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Purchasedate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Itemimage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Receiptimage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Upc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Policy.Policyid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Itemid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Itemid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Itemid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

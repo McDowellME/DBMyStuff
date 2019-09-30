@@ -1,0 +1,76 @@
+﻿@model PersonalPropertyApp.Models.PolicyItems
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PolicyItems</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Itemname" class="control-label"></label>
+                <input asp-for="Itemname" class="form-control" />
+                <span asp-validation-for="Itemname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Itemcategory" class="control-label"></label>
+                <input asp-for="Itemcategory" class="form-control" />
+                <span asp-validation-for="Itemcategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Itemdescription" class="control-label"></label>
+                <input asp-for="Itemdescription" class="form-control" />
+                <span asp-validation-for="Itemdescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchaseprice" class="control-label"></label>
+                <input asp-for="Purchaseprice" class="form-control" />
+                <span asp-validation-for="Purchaseprice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchasedate" class="control-label"></label>
+                <input asp-for="Purchasedate" class="form-control" />
+                <span asp-validation-for="Purchasedate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Itemimage" class="control-label"></label>
+                <input asp-for="Itemimage" class="form-control" />
+                <span asp-validation-for="Itemimage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Receiptimage" class="control-label"></label>
+                <input asp-for="Receiptimage" class="form-control" />
+                <span asp-validation-for="Receiptimage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Upc" class="control-label"></label>
+                <input asp-for="Upc" class="form-control" />
+                <span asp-validation-for="Upc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Userid" class="control-label"></label>
+                <select asp-for="Userid" class ="form-control" asp-items="ViewBag.Userid"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Policyid" class="control-label"></label>
+                <select asp-for="Policyid" class ="form-control" asp-items="ViewBag.Policyid"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
