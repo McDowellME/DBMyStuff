@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Claim Reports</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,16 +13,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Claimreason)
+                @{
+//Html.DisplayNameFor(model => model.Claimreason)
+                }
+                Reason
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Reportdate)
+                @{
+//Html.DisplayNameFor(model => model.Reportdate)
+                }
+                Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Policy)
+                @{
+//Html.DisplayNameFor(model => model.Policy)
+                }
+                Policy
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User)
+                @{
+                    //Html.DisplayNameFor(model => model.User)
+                }
+                User
             </th>
             <th></th>
         </tr>

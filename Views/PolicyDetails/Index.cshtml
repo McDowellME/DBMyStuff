@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Insurance Policies</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,28 +13,52 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Policynumber)
+                @{
+//Html.DisplayNameFor(model => model.Policynumber)
+                }
+                Policy Number
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Inscompanyid)
+                @{
+//Html.DisplayNameFor(model => model.Inscompanyid)
+                }
+                Company ID        
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Inscompanyname)
+                @{
+//Html.DisplayNameFor(model => model.Inscompanyname)
+                }
+                Company Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Inscontactname)
+                @{
+//Html.DisplayNameFor(model => model.Inscontactname)
+                }
+                Contact Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Inscompanywebsite)
+                @{
+//Html.DisplayNameFor(model => model.Inscompanywebsite)
+                }
+                Website
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Inscontactphone)
+                @{
+//Html.DisplayNameFor(model => model.Inscontactphone)
+                }
+                Phone
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Inscontactemail)
+                @{
+//Html.DisplayNameFor(model => model.Inscontactemail)
+                }
+                eMail
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User)
+                @{
+                    //Html.DisplayNameFor(model => model.User)
+                }
+                User
             </th>
             <th></th>
         </tr>

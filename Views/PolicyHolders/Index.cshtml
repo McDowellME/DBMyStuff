@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Policy Holder Details</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,16 +13,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Firstname)
+                @{
+//Html.DisplayNameFor(model => model.Firstname)
+                }
+                First Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Lastname)
+                @{
+//Html.DisplayNameFor(model => model.Lastname)
+                }
+                Last Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                @{
+//Html.DisplayNameFor(model => model.Email)
+                }
+                eMail
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Password)
+                @{
+                    //Html.DisplayNameFor(model => model.Password)
+                }
+                Password
             </th>
             <th></th>
         </tr>

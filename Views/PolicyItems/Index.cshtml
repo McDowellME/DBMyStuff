@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Personal Property Items</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,34 +13,64 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Itemname)
+                @{
+//Html.DisplayNameFor(model => model.Itemname)
+                }
+                Item Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Itemcategory)
+                @{
+//Html.DisplayNameFor(model => model.Itemcategory)
+                }
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Itemdescription)
+                @{
+//Html.DisplayNameFor(model => model.Itemdescription)
+
+                }
+                Description
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Purchaseprice)
+                @{
+//Html.DisplayNameFor(model => model.Purchaseprice)
+                }
+                Purchase Price
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Purchasedate)
+                @{
+//Html.DisplayNameFor(model => model.Purchasedate)
+                }
+                Purchase Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Itemimage)
+                @{
+//Html.DisplayNameFor(model => model.Itemimage)
+                }
+                Image
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Receiptimage)
+                @{
+//Html.DisplayNameFor(model => model.Receiptimage)
+                }
+                Receipt Image
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Upc)
+                @{
+//Html.DisplayNameFor(model => model.Upc)
+                }
+                UPC
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Policy)
+                @{
+//Html.DisplayNameFor(model => model.Policy)
+                }
+                Policy
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User)
+                @{
+                    //Html.DisplayNameFor(model => model.User)
+                }
+                User
             </th>
             <th></th>
         </tr>
