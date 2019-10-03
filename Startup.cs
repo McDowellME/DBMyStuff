@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PersonalPropertyApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace PersonalPropertyApp
 {
@@ -32,7 +33,7 @@ namespace PersonalPropertyApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<InsuranceAppContext>();
+            services.AddDbContext<InsuranceAppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyApp")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
