@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,17 +14,20 @@ namespace PersonalPropertyApp.Controllers
     public class PolicyHoldersController : Controller
     {
         private readonly InsuranceAppContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public PolicyHoldersController(InsuranceAppContext context)
+        public PolicyHoldersController(InsuranceAppContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: PolicyHolders
         public async Task<IActionResult> Index()
         {
-            var currentEmail = User.FindFirstValue(ClaimTypes.Email);
-            return View(await _context.PolicyHolder.Where(u => true).ToListAsync());
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var currentEmail = user.Email;
+            return View(await _context.PolicyHolder.Where(u => u.Email == currentEmail).ToListAsync());
         }
 
         // GET: PolicyHolders/Details/5

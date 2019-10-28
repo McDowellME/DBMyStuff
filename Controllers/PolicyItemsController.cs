@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,17 +13,21 @@ namespace PersonalPropertyApp.Controllers
     public class PolicyItemsController : Controller
     {
         private readonly InsuranceAppContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public PolicyItemsController(InsuranceAppContext context)
+        public PolicyItemsController(InsuranceAppContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: PolicyItems
         public async Task<IActionResult> Index()
         {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var currentEmail = user.Email;
             var insuranceAppContext = _context.PolicyItems.Include(p => p.Policy).Include(p => p.User);
-            return View(await insuranceAppContext.ToListAsync());
+            return View(await insuranceAppContext.Where(p => p.User.Email == currentEmail).ToListAsync());
         }
 
         // GET: PolicyItems/Details/5

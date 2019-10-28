@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using PersonalPropertyApp.Models;
 
 namespace PersonalPropertyApp.Areas.Identity.Pages.Account
 {
@@ -19,17 +21,20 @@ namespace PersonalPropertyApp.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly InsuranceAppContext _context;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            InsuranceAppContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = context;
         }
 
         [BindProperty]
@@ -83,6 +88,13 @@ namespace PersonalPropertyApp.Areas.Identity.Pages.Account
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
+                    PolicyHolder newUser = new PolicyHolder();
+                    newUser.Email = user.Email;
+                    newUser.Password = "";
+                    newUser.Firstname = "";
+                    newUser.Lastname = "";
+                    _context.PolicyHolder.Add(newUser);
+                    _context.SaveChanges();
                     return LocalRedirect(returnUrl);
                 }
                 foreach (var error in result.Errors)
