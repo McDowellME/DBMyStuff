@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -21,7 +22,8 @@ namespace PersonalPropertyApp.Controllers
         // GET: PolicyHolders
         public async Task<IActionResult> Index()
         {
-            return View(await _context.PolicyHolder.ToListAsync());
+            var currentEmail = User.FindFirstValue(ClaimTypes.Email);
+            return View(await _context.PolicyHolder.Where(u => true).ToListAsync());
         }
 
         // GET: PolicyHolders/Details/5
