@@ -90,9 +90,8 @@ namespace PersonalPropertyApp.Areas.Identity.Pages.Account
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     PolicyHolder newUser = new PolicyHolder();
                     newUser.Email = user.Email;
-                    newUser.Password = "";
-                    newUser.Firstname = "";
-                    newUser.Lastname = "";
+                    newUser.Firstname = "First Name";
+                    newUser.Lastname = "Last Name";
                     _context.PolicyHolder.Add(newUser);
                     _context.SaveChanges();
                     return LocalRedirect(returnUrl);

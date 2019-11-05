@@ -20,6 +20,8 @@ namespace PersonalPropertyApp.Models
         public string Inscompanywebsite { get; set; }
         public string Inscontactphone { get; set; }
         public string Inscontactemail { get; set; }
+        public string Policynickname { get; set; }
+        public string Policytype { get; set; }
 
         public virtual PolicyHolder User { get; set; }
         public virtual ICollection<ClaimReport> ClaimReport { get; set; }

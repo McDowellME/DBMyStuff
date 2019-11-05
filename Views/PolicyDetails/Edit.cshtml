@@ -4,54 +4,65 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Edit Policy Details for:</h1>
 
-<h4>PolicyDetails</h4>
+<h4>"@Html.DisplayFor(model => model.Policynickname)"</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Policyid" />
+            @*<div class="form-group">
+            <label asp-for="Userid" class="control-label"></label>
+            <select asp-for="Userid" class="form-control" asp-items="ViewBag.Userid"></select>
+            <span asp-validation-for="Userid" class="text-danger"></span>
+        </div>*@
             <div class="form-group">
-                <label asp-for="Userid" class="control-label"></label>
-                <select asp-for="Userid" class="form-control" asp-items="ViewBag.Userid"></select>
-                <span asp-validation-for="Userid" class="text-danger"></span>
+                <label asp-for="Policynickname" class="control-label">Policy NickName</label>
+                <input asp-for="Policynickname" class="form-control" />
+                <span asp-validation-for="Policynickname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Policynumber" class="control-label"></label>
+                <label asp-for="Policytype" class="control-label">Policy Type</label>
+                <select asp-for="Policytype" class="form-control">
+                    <option>Homeowner</option>
+                    <option>Renters</option>
+                    <option>Condo</option>
+                    <option>Rental Property</option>
+                    <option>Valuable Personal Property</option>
+                    <option>Other or Unknown</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Policynumber" class="control-label">Policy Number</label>
                 <input asp-for="Policynumber" class="form-control" />
                 <span asp-validation-for="Policynumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Inscompanyid" class="control-label"></label>
-                <input asp-for="Inscompanyid" class="form-control" />
-                <span asp-validation-for="Inscompanyid" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Inscompanyname" class="control-label"></label>
+                <label asp-for="Inscompanyname" class="control-label">Insurance Company Name</label>
                 <input asp-for="Inscompanyname" class="form-control" />
                 <span asp-validation-for="Inscompanyname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Inscontactname" class="control-label"></label>
-                <input asp-for="Inscontactname" class="form-control" />
-                <span asp-validation-for="Inscontactname" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Inscompanywebsite" class="control-label"></label>
+                <label asp-for="Inscompanywebsite" class="control-label">Insurance Company Website</label>
                 <input asp-for="Inscompanywebsite" class="form-control" />
                 <span asp-validation-for="Inscompanywebsite" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Inscontactphone" class="control-label"></label>
-                <input asp-for="Inscontactphone" class="form-control" />
-                <span asp-validation-for="Inscontactphone" class="text-danger"></span>
+                <label asp-for="Inscontactname" class="control-label">Contact Name</label>
+                <input asp-for="Inscontactname" class="form-control" />
+                <span asp-validation-for="Inscontactname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Inscontactemail" class="control-label"></label>
+                <label asp-for="Inscontactemail" class="control-label">Contact eMail</label>
                 <input asp-for="Inscontactemail" class="form-control" />
                 <span asp-validation-for="Inscontactemail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inscontactphone" class="control-label">Insurance Company Phone</label>
+                <input asp-for="Inscontactphone" class="form-control" />
+                <span asp-validation-for="Inscontactphone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

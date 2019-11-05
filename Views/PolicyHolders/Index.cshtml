@@ -6,9 +6,9 @@
 
 <h1>Policy Holder Details</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Add New</a>
-</p>
+</p>*@
 <table class="table">
     <thead>
         <tr>
@@ -23,19 +23,7 @@
 //Html.DisplayNameFor(model => model.Lastname)
                 }
                 Last Name
-            </th>
-            <th>
-                @{
-//Html.DisplayNameFor(model => model.Email)
-                }
-                eMail
-            </th>
-            <th>
-                @{
-                    //Html.DisplayNameFor(model => model.Password)
-                }
-                Password
-            </th>
+            </th>            
             <th></th>
         </tr>
     </thead>
@@ -47,13 +35,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Lastname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
+            </td>            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Userid">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Userid">Details</a> |

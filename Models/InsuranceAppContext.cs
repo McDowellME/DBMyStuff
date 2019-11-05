@@ -126,6 +126,16 @@ namespace PersonalPropertyApp.Models
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Policynickname)
+                    .HasColumnName("policynickname")
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Policytype)
+                    .HasColumnName("policytype")
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Userid).HasColumnName("userid");
 
                 entity.HasOne(d => d.User)
@@ -159,10 +169,9 @@ namespace PersonalPropertyApp.Models
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Password)
-                    .IsRequired()
-                    .HasColumnName("password")
-                    .HasMaxLength(30)
+                entity.Property(e => e.Address)
+                    .HasColumnName("address")
+                    .HasMaxLength(250)
                     .IsUnicode(false);
             });
 

@@ -49,17 +49,17 @@ namespace PersonalPropertyApp.Controllers
         }
 
         // GET: PolicyHolders/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
+        //public IActionResult Create()
+        //{
+            //return View();
+        //}
 
         // POST: PolicyHolders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Userid,Firstname,Lastname,Email,Password")] PolicyHolder policyHolder)
+        public async Task<IActionResult> Create([Bind("Userid,Firstname,Lastname,Email,Address")] PolicyHolder policyHolder)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace PersonalPropertyApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Userid,Firstname,Lastname,Email,Password")] PolicyHolder policyHolder)
+        public async Task<IActionResult> Edit(int id, [Bind("Userid,Firstname,Lastname,Email,Address")] PolicyHolder policyHolder)
         {
             if (id != policyHolder.Userid)
             {

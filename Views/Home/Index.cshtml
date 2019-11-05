@@ -5,22 +5,29 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Welcome to DB My Stuff</p>
+<div class="text-left">
+    <h1 class="display-4">Welcome to DB My Stuff</h1>
+    
 </div>
 @if (SignInManager.IsSignedIn(User))
 {
+    <div class="text-left">
+        <h2 class="">Dashboard</h2>
+    </div>
+
     <div class="list-group">
         <a asp-controller="PolicyHolders" class="list-group-item">About The Policy Holders</a>
         <a asp-controller="PolicyDetails" class="list-group-item">About My Policy</a>
         <a asp-controller="PolicyItems" class="list-group-item">My Personal Property Items</a>
-        <a asp-controller="#" class="list-group-item">Build a Claim Report</a>
-        <a asp-controller="ClaimReports" class="list-group-item">Insurance Claim Reports</a>
+        <a asp-controller="#" class="list-group-item">Build an Insurance Claim</a>
+        <a asp-controller="ClaimReports" class="list-group-item">My Claim Reports</a>
     </div>
 }
 else
 {
+    <div class="text-left">
+        <h2 class="">To Get Started, Register For An Account Or Sign In</h2>
+    </div>
     <div class="list-group">
         <a class="list-group-item" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
         <a class="list-group-item" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>

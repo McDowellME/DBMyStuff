@@ -52,7 +52,7 @@ namespace PersonalPropertyApp.Controllers
         // GET: PolicyDetails/Create
         public IActionResult Create()
         {
-            ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email");
+            //ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email");            
             return View();
         }
 
@@ -61,10 +61,19 @@ namespace PersonalPropertyApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Policyid,Userid,Policynumber,Inscompanyid,Inscompanyname,Inscontactname,Inscompanywebsite,Inscontactphone,Inscontactemail")] PolicyDetails policyDetails)
+        public async Task<IActionResult> Create([Bind("Policynickname,Policytype,Userid,Policynumber,Inscompanyname,Inscontactname,Inscompanywebsite,Inscontactphone,Inscontactemail")] PolicyDetails policyDetails)
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.GetUserAsync(HttpContext.User);
+                var currentEmail = user.Email;
+                var newUserId = await _context.PolicyHolder.FirstOrDefaultAsync(p => p.Email == currentEmail);
+                //await newUserId.Where(p => p.User.Email == currentEmail).ToListAsync());
+
+                //var newUserId = await _context.PolicyDetails
+                //.Include(p => p.User)
+                //.FirstOrDefaultAsync(m => m.Userid == id);
+                policyDetails.Userid = newUserId.Userid;
                 _context.Add(policyDetails);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
