@@ -4,74 +4,45 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Personal Property Items</h1>
+<h1>My Personal Property Items</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @{
-//Html.DisplayNameFor(model => model.Itemname)
+                    //Html.DisplayNameFor(model => model.Itemname)
                 }
-                Item Name
+                Item
             </th>
             <th>
                 @{
-//Html.DisplayNameFor(model => model.Itemcategory)
-                }
-            </th>
-            <th>
-                @{
-//Html.DisplayNameFor(model => model.Itemdescription)
-
-                }
-                Description
-            </th>
-            <th>
-                @{
-//Html.DisplayNameFor(model => model.Purchaseprice)
-                }
-                Purchase Price
-            </th>
-            <th>
-                @{
-//Html.DisplayNameFor(model => model.Purchasedate)
-                }
-                Purchase Date
-            </th>
-            <th>
-                @{
-//Html.DisplayNameFor(model => model.Itemimage)
-                }
-                Image
-            </th>
-            <th>
-                @{
-//Html.DisplayNameFor(model => model.Receiptimage)
-                }
-                Receipt Image
-            </th>
-            <th>
-                @{
-//Html.DisplayNameFor(model => model.Upc)
-                }
-                UPC
-            </th>
-            <th>
-                @{
-//Html.DisplayNameFor(model => model.Policy)
+                    //Html.DisplayNameFor(model => model.Policynickname)
                 }
                 Policy
             </th>
             <th>
                 @{
-                    //Html.DisplayNameFor(model => model.User)
+                    //Html.DisplayNameFor(model => model.Itemcategory)
                 }
-                User
+                Category
             </th>
+            <th>
+                @{
+                    //Html.DisplayNameFor(model => model.Purchaseprice)
+                }
+                Price
+            </th>
+            <th>
+                @{
+                    //Html.DisplayNameFor(model => model.Itemimage)
+                }
+                Image
+            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -82,31 +53,16 @@
                 @Html.DisplayFor(modelItem => item.Itemname)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Itemcategory)
+                @Html.DisplayFor(modelItem => item.Policy.Policynickname)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Itemdescription)
+                @Html.DisplayFor(modelItem => item.Itemcategory)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Purchaseprice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Purchasedate)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Itemimage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Receiptimage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Upc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Policy.Policyid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Email)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Itemid">Edit</a> |

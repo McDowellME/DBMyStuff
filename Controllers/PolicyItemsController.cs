@@ -53,8 +53,8 @@ namespace PersonalPropertyApp.Controllers
         // GET: PolicyItems/Create
         public IActionResult Create()
         {
-            ViewData["Policyid"] = new SelectList(_context.PolicyDetails, "Policyid", "Policyid");
-            ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email");
+            ViewData["Policyid"] = new SelectList(_context.PolicyDetails, "Policyid", "Policynickname");
+            //ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email");
             return View();
         }
 
@@ -67,6 +67,11 @@ namespace PersonalPropertyApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.GetUserAsync(HttpContext.User);
+                var currentEmail = user.Email;
+                var newUserId = await _context.PolicyHolder.FirstOrDefaultAsync(p => p.Email == currentEmail);
+
+                policyItems.Userid = newUserId.Userid;
                 _context.Add(policyItems);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

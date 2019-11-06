@@ -14,6 +14,7 @@ namespace PersonalPropertyApp.Controllers
     {
         private readonly InsuranceAppContext _context;
         private readonly UserManager<IdentityUser> _userManager;
+        
 
         public PolicyDetailsController(InsuranceAppContext context, UserManager<IdentityUser> userManager)
         {
@@ -68,17 +69,13 @@ namespace PersonalPropertyApp.Controllers
                 var user = await _userManager.GetUserAsync(HttpContext.User);
                 var currentEmail = user.Email;
                 var newUserId = await _context.PolicyHolder.FirstOrDefaultAsync(p => p.Email == currentEmail);
-                //await newUserId.Where(p => p.User.Email == currentEmail).ToListAsync());
-
-                //var newUserId = await _context.PolicyDetails
-                //.Include(p => p.User)
-                //.FirstOrDefaultAsync(m => m.Userid == id);
+                
                 policyDetails.Userid = newUserId.Userid;
                 _context.Add(policyDetails);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyDetails.Userid);
+            //ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyDetails.Userid);
             return View(policyDetails);
         }
 
@@ -95,7 +92,7 @@ namespace PersonalPropertyApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyDetails.Userid);
+            //ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyDetails.Userid);
             return View(policyDetails);
         }
 
@@ -104,7 +101,7 @@ namespace PersonalPropertyApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Policyid,Userid,Policynumber,Inscompanyid,Inscompanyname,Inscontactname,Inscompanywebsite,Inscontactphone,Inscontactemail")] PolicyDetails policyDetails)
+        public async Task<IActionResult> Edit(int id, [Bind("Policyid,Userid,Policynumber,Inscompanyid,Inscompanyname,Inscontactname,Inscompanywebsite,Inscontactphone,Inscontactemail,Policynickname,Policytype")] PolicyDetails policyDetails)
         {
             if (id != policyDetails.Policyid)
             {
@@ -115,7 +112,8 @@ namespace PersonalPropertyApp.Controllers
             {
                 try
                 {
-                    _context.Update(policyDetails);
+                    
+                    _context.Update(policyDetails);                    
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -131,7 +129,7 @@ namespace PersonalPropertyApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyDetails.Userid);
+            //ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyDetails.Userid);
             return View(policyDetails);
         }
 
