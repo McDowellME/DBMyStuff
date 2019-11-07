@@ -12,8 +12,8 @@ DB My Stuff is an application in which users can store information about their p
 
 ### Requirements
 
-![Req1](/Req1.jpg)
-![Req2](/Req2.jpg)
+![Req1](/Req1.JPG)
+![Req2](/Req2.JPG)
 
 ### Design
 
