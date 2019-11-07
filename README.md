@@ -28,6 +28,11 @@ DB My Stuff is an application in which users can store information about their p
 
 ## Architecture & Code Walk-through
 
+[Models](https://github.com/McDowellME/DBMyStuff/tree/master/Models)
+[Views](https://github.com/McDowellME/DBMyStuff/tree/master/Views)
+[Controllers](https://github.com/McDowellME/DBMyStuff/tree/master/Controllers)
+[Areas => Identity => Pages => Account](https://github.com/McDowellME/DBMyStuff/tree/master/Areas/Identity)
+
 
 
 ## It's in the Cloud!!
