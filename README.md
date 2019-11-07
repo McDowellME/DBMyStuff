@@ -34,15 +34,23 @@ DB My Stuff is an application in which users can store information about their p
 
 * [Scaffold Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-3.0&tabs=visual-studio#scaffold-identity-into-an-mvc-project-without-existing-authorization)
 
-*
+* Entity Framework
 
 *
 
 *
+
 
 ### Paths explored
 
+
+
+
 ### Future development ideas
+
+* Xamarin
+
+* No SQL DB
 
 
 
@@ -74,11 +82,36 @@ DB My Stuff is an application in which users can store information about their p
 
 ### Why I'm awesome
 
+* DB first & scaffolding
+
+* Simple concept from inception
+
 
 ### Happy little accidents
 
+* Paralysis by analysis 
+
+* Prioritization 
+
+* Design - Wireframes
 
 ### Luck was on my side
 
+* People as a resource
+
+* Trial & error
+
+* Scripting tables
+
 
 ### What future me would tell past me
+
+* Scaffold
+
+* Organization
+
+* Prioritize - Kanban
+
+* Turn on in server on Azure
+
+
