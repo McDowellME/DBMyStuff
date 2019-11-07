@@ -29,7 +29,7 @@ DB My Stuff is an application in which users can store information about their p
 
 ### Test
 
-![Test1](/Test.JPG)
+![Test1](/Test1.JPG)
 ![Test2](/Test2.JPG)
 
 ## Solution
