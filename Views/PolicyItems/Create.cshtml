@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Add</h1>
 
-<h4>PolicyItems</h4>
+<h4>Personal Property Item</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -17,10 +17,25 @@
                 <input asp-for="Itemname" class="form-control" />
                 <span asp-validation-for="Itemname" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Itemcategory" class="control-label">Category</label>
                 <input asp-for="Itemcategory" class="form-control" />
                 <span asp-validation-for="Itemcategory" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Itemcategory" class="control-label">Category</label>
+                <select asp-for="Itemcategory" class="form-control">
+                    <option>Clothing</option>
+                    <option>Jewelry</option>
+                    <option>Electronics</option>
+                    <option>Sports Equipment</option>
+                    <option>Decor</option>
+                    <option>Military Items</option>
+                    <option>Books</option>
+                    <option>Furniture</option>
+                    <option>Appliances</option>
+                    <option>Other</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Itemdescription" class="control-label">Description</label>
@@ -51,10 +66,12 @@
                 <label asp-for="Upc" class="control-label">UPC</label>
                 <input asp-for="Upc" class="form-control" />
                 <span asp-validation-for="Upc" class="text-danger"></span>
-            </div> 
+            </div>
             <div class="form-group">
                 <label asp-for="Policyid" class="control-label">Policy</label>
-                <select asp-for="Policyid" class ="form-control" asp-items="ViewBag.Policyid"></select>
+                <select asp-for="Policyid" class="form-control" asp-items="ViewBag.Policyid"></select>
+                @*<input asp-for="Policyid" class="form-control" />*@
+                <span asp-validation-for="Policyid" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

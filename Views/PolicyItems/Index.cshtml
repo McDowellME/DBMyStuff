@@ -44,6 +44,10 @@
             </th>
 
             <th></th>
+
+            <th style="text-align:center">
+                Add to claim
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -68,6 +72,9 @@
                 <a asp-action="Edit" asp-route-id="@item.Itemid">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Itemid">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Itemid">Delete</a>
+            </td>
+            <td class="checkbox" style="text-align:center">
+                <input type="checkbox">
             </td>
         </tr>
 }

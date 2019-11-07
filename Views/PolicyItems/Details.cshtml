@@ -4,72 +4,75 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Details About:</h1>
 
 <div>
-    <h4>PolicyItems</h4>
+    <h4>"@Html.DisplayFor(model => model.Itemname)"</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Itemname)
+            Item Name
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Itemname)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Itemcategory)
+            @*@Html.DisplayNameFor(model => model.Itemcategory)*@
+            Category
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Itemcategory)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Itemdescription)
+            @*@Html.DisplayNameFor(model => model.Itemdescription)*@
+            Description
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Itemdescription)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Purchaseprice)
+            @*@Html.DisplayNameFor(model => model.Purchaseprice)*@
+            Purchase Price
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Purchaseprice)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Purchasedate)
+            @*@Html.DisplayNameFor(model => model.Purchasedate)*@
+            Purchase Date
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Purchasedate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Itemimage)
+            @*@Html.DisplayNameFor(model => model.Itemimage)*@
+            Image
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Itemimage)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Receiptimage)
+            @*@Html.DisplayNameFor(model => model.Receiptimage)*@
+            Reciept Image
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Receiptimage)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Upc)
+            @*@Html.DisplayNameFor(model => model.Upc)*@
+            UPC
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Upc)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Policy)
+            @*@Html.DisplayNameFor(model => model.Policy)*@
+            Policy
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Policy.Policyid)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User.Email)
-        </dd>
+            @Html.DisplayFor(model => model.Policy.Policynickname)
+        </dd>       
     </dl>
 </div>
 <div>

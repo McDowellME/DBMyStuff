@@ -51,9 +51,13 @@ namespace PersonalPropertyApp.Controllers
         }
 
         // GET: PolicyItems/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewData["Policyid"] = new SelectList(_context.PolicyDetails, "Policyid", "Policynickname");
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var currentEmail = user.Email;
+            var newUserId = await _context.PolicyHolder.FirstOrDefaultAsync(p => p.Email == currentEmail);
+
+            ViewData["Policyid"] = new SelectList(_context.PolicyDetails.Where(p => p.User.Userid == newUserId.Userid), "Policyid", "Policynickname");
             //ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email");
             return View();
         }
@@ -65,25 +69,29 @@ namespace PersonalPropertyApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Itemid,Itemname,Itemcategory,Itemdescription,Purchaseprice,Purchasedate,Itemimage,Receiptimage,Upc,Userid,Policyid")] PolicyItems policyItems)
         {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var currentEmail = user.Email;
+            var newUserId = await _context.PolicyHolder.FirstOrDefaultAsync(p => p.Email == currentEmail);
+
             if (ModelState.IsValid)
             {
-                var user = await _userManager.GetUserAsync(HttpContext.User);
-                var currentEmail = user.Email;
-                var newUserId = await _context.PolicyHolder.FirstOrDefaultAsync(p => p.Email == currentEmail);
-
                 policyItems.Userid = newUserId.Userid;
                 _context.Add(policyItems);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Policyid"] = new SelectList(_context.PolicyDetails, "Policyid", "Policyid", policyItems.Policyid);
-            ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyItems.Userid);
+
+            ViewData["Policyid"] = new SelectList(_context.PolicyDetails.Where(p => p.User.Userid == newUserId.Userid), "Policyid", "Policynickname", policyItems.Policyid);
+            //ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyItems.Userid);
             return View(policyItems);
         }
 
         // GET: PolicyItems/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var currentEmail = user.Email;
+            var newUserId = await _context.PolicyHolder.FirstOrDefaultAsync(p => p.Email == currentEmail);
             if (id == null)
             {
                 return NotFound();
@@ -94,8 +102,8 @@ namespace PersonalPropertyApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["Policyid"] = new SelectList(_context.PolicyDetails, "Policyid", "Policyid", policyItems.Policyid);
-            ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyItems.Userid);
+            ViewData["Policyid"] = new SelectList(_context.PolicyDetails.Where(p => p.User.Userid == newUserId.Userid), "Policyid", "Policynickname", policyItems.Policyid);
+            //ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyItems.Userid);
             return View(policyItems);
         }
 
@@ -106,6 +114,10 @@ namespace PersonalPropertyApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Itemid,Itemname,Itemcategory,Itemdescription,Purchaseprice,Purchasedate,Itemimage,Receiptimage,Upc,Userid,Policyid")] PolicyItems policyItems)
         {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var currentEmail = user.Email;
+            var newUserId = await _context.PolicyHolder.FirstOrDefaultAsync(p => p.Email == currentEmail);
+
             if (id != policyItems.Itemid)
             {
                 return NotFound();
@@ -131,8 +143,8 @@ namespace PersonalPropertyApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Policyid"] = new SelectList(_context.PolicyDetails, "Policyid", "Policyid", policyItems.Policyid);
-            ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyItems.Userid);
+            ViewData["Policyid"] = new SelectList(_context.PolicyDetails.Where(p => p.User.Userid == newUserId.Userid), "Policyid", "Policynickname", policyItems.Policyid);
+            //ViewData["Userid"] = new SelectList(_context.PolicyHolder, "Userid", "Email", policyItems.Userid);
             return View(policyItems);
         }
 
