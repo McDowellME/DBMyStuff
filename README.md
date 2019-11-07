@@ -32,6 +32,9 @@ DB My Stuff is an application in which users can store information about their p
 
 ## It's in the Cloud!!
 
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+
 ### [DB My Stuff](https://dbmystuff.azurewebsites.net)
 
 
