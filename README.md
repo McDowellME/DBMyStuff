@@ -52,6 +52,12 @@ DB My Stuff is an application in which users can store information about their p
 
 * No SQL DB
 
+### Security
+
+* Admin
+
+* User's sensitive data
+
 
 
 ## Architecture & Code Walk-through
