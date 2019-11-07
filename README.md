@@ -4,7 +4,11 @@
 
 [Concept Presentation](https://prezi.com/view/boyYX2lCzWfMdtXd0eJE/)
 
-DB My Stuff 
+Inspiration
 
+DB My Stuff is an application in which users can store information about their personal property insurance policies, create a database of their personal property items with insurance-related information, and create insurance claim reports of items lost in the event of a claim.
 
+### Software Development Lifecycle
+
+#### Requirements
 
