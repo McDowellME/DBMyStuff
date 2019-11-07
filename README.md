@@ -4,9 +4,9 @@
 
 **[Concept Presentation](https://prezi.com/view/boyYX2lCzWfMdtXd0eJE/)**
 
-Inspiration
+With all of the fires in California, it was the first time as a renter or homeowner that there was a realistic chance I could lose my home and personal property. I had to ask myself if I was ready with an inventory of my items if I had to make a claim. Insurance isn't an exciting topic, but so important for everyone. Some may think they don't have anything of value, but when you add it all up and the cost to replace it, it's more than you realize. Many don't know, but if a valuable is stolen from your vehicle, it is not covered by your auto insurance, but by your personal property insurance. This is the same if an item is stolen anywhere outside the home.
 
-DB My Stuff is an application in which users can store information about their personal property insurance policies, create a database of their personal property items with insurance-related information, and create insurance claim reports of items lost in the event of a claim.
+DB My Stuff is an application in which users can store information about their personal property insurance policies, create a database of their personal property items with insurance-related information, and create insurance claim reports of items lost in the event of a claim. My goal is to have an intuitive platform in order to do this, so it is much easier for individuals to do so and be ready in the unfortunate event of a loss of property. 
 
 ## Software Development Lifecycle
 
