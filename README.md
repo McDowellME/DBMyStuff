@@ -26,6 +26,12 @@ DB My Stuff is an application in which users can store information about their p
 
 ### Technologies used
 
+* ASP.NET Core 2.2
+
+* MVC
+
+* Scaffold existing database
+
 * [Scaffold Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-3.0&tabs=visual-studio#scaffold-identity-into-an-mvc-project-without-existing-authorization)
 
 *
