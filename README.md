@@ -133,6 +133,6 @@ DB My Stuff is an application in which users can store information about their p
 
 * Prioritize - Kanban
 
-* Turn on in server on Azure
+* Turn on "Allow access to server..." in Firewall settings on Azure
 
 
