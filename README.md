@@ -26,6 +26,10 @@ DB My Stuff is an application in which users can store information about their p
 
 ### Implementation
 
+[Sprint Burndown Template](https://github.com/McDowellME/DBMyStuff/blob/master/SprintBurndownTemplate.xlsx)
+
+![SprintBurndown](/SprintBurndownTempImage.JPG)
+
 
 ### Test
 
