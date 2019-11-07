@@ -36,14 +36,12 @@ DB My Stuff is an application in which users can store information about their p
 
 * Entity Framework
 
-*
-
-*
+* LINQ filtering
 
 
 ### Paths explored
 
-
+* Xamarin
 
 
 ### Future development ideas
@@ -51,6 +49,8 @@ DB My Stuff is an application in which users can store information about their p
 * Xamarin
 
 * No SQL DB
+
+* BLOB storage
 
 ### Security
 
