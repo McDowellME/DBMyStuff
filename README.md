@@ -19,9 +19,9 @@ DB My Stuff is an application in which users can store information about their p
 
 ### Design
 
-![WFItems](/Wireframes_Items.JPG)
+![WFItems](/Wireframe_Items.JPG)
 
-![WFPolicyholder](/Wireframes_Policyholder.JPG)
+![WFPolicyholder](/Wireframe_Policyholder.JPG)
 
 
 ### Implementation
