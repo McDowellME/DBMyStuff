@@ -27,6 +27,7 @@ DB My Stuff is an application in which users can store information about their p
 
 
 ## Architecture & Code Walk-through
+![No idea](/programmerstates.png)
 
 [Models](https://github.com/McDowellME/DBMyStuff/tree/master/Models)
 
