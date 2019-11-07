@@ -32,7 +32,7 @@ DB My Stuff is an application in which users can store information about their p
 
 ## It's in the Cloud!!
 
-![Cloud](DBMyStuff/images/sleepingbeautyclouds.gif)
+![Cloud](/sleepingbeautyclouds.gif)
 Format: ![Alt Text](url)
 
 ### [DB My Stuff](https://dbmystuff.azurewebsites.net)
