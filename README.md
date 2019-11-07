@@ -28,6 +28,12 @@ DB My Stuff is an application in which users can store information about their p
 
 * [Scaffold Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-3.0&tabs=visual-studio#scaffold-identity-into-an-mvc-project-without-existing-authorization)
 
+*
+
+*
+
+*
+
 ### Paths explored
 
 ### Future development ideas
@@ -53,7 +59,7 @@ DB My Stuff is an application in which users can store information about their p
 
 ![Cloud](/sleepingbeautyclouds.gif)
 
-### [DB My Stuff](https://dbmystuff.azurewebsites.net)
+### [Check out my site here!](https://dbmystuff.azurewebsites.net)
 
 
 
