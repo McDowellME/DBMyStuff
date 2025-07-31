@@ -94,7 +94,7 @@ DB My Stuff is an application in which users can store information about their p
 
 ![Cloud](/sleepingbeautyclouds.gif)
 
-### [Check out my site here!](https://dbmystuff.azurewebsites.net)
+### Check out my site here! (No longer hosted) (https://dbmystuff.azurewebsites.net)
 
 
 
